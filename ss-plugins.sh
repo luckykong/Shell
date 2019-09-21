@@ -821,10 +821,10 @@ install_completed(){
             # cloudflare email & api key
             # export CLOUDFLARE_EMAIL="${CF_Email}"
             # export CLOUDFLARE_API_KEY="${CF_Key}"
-            cat >> /etc/profile <<"EOF"
-            export CLOUDFLARE_EMAIL="${CF_Email}"
-	    export CLOUDFLARE_API_KEY="${CF_Key}"
-            EOF
+            cat > /etc/profile <<-EOF
+			export CLOUDFLARE_EMAIL="${CF_Email}"
+			export CLOUDFLARE_API_KEY="${CF_Key}"
+			EOF
             
             # start caddy
             /etc/init.d/caddy start > /dev/null 2>&1
