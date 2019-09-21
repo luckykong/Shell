@@ -1051,7 +1051,8 @@ do_start(){
             ${KCPTUN_INIT} start
         elif [[ -e "${CLOAK_INIT}" ]]; then
             /etc/init.d/cloak start
-        elif [ "$(command -v caddy)" ]; then
+        # elif [ "$(command -v caddy)" ]; then
+        elif [[ -e "${CADDY_CONF_FILE}" ]]; then
             /etc/init.d/caddy start
         fi
     else
